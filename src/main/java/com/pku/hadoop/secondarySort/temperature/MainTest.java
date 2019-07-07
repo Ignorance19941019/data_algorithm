@@ -20,8 +20,6 @@ public class MainTest {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
 
-
-
         Job job = Job.getInstance(conf);
         FileInputFormat.addInputPath(job, new Path("hdfs://node01:9000/data/input/tq"));
         FileSystem fs = FileSystem.get(conf);
@@ -29,7 +27,6 @@ public class MainTest {
         job.setJarByClass(MainTest.class);
 
         job.setInputFormatClass(TextInputFormat.class);
-        Object
 
 
         job.setMapperClass(MyMapper.class);
